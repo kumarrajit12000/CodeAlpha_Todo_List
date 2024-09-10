@@ -9,6 +9,17 @@ Form.addEventListener('submit',(event) => {
   addTodo(Input.value); 
 });
 
+// check todo already exist or not
+const checkTodo = (todo) => {
+  const check = todos.some((el) => { if(todo.toLowerCase() == el["name"].toLowerCase() ){return true}});
+
+  if(check){
+    alert("TODO is already exist... Try Another Todo")
+ }
+ else {
+   addTodo(Input.value); 
+ } 
+}
 // Add new todo to Todo list...
 
 const addTodo = (item) => {
